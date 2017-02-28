@@ -9,6 +9,11 @@
         <script src="https://code.jquery.com/jquery-latest.min.js"></script>
         
         <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+        
+        <script src="js/syntaxhighlighter/scripts/shCore.js"></script>
+        <script src="js/syntaxhighlighter/scripts/shBrushJScript.js"></script>
+        <link rel="stylesheet" href="js/syntaxhighlighter/styles/shCore.css">
+        <link rel="stylesheet" href="js/syntaxhighlighter/styles/shThemeDefault.css">
 
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <script src="js/bootstrap.min.js"></script>
@@ -35,12 +40,14 @@
                  if ($target) {
 
                     var targetOffset = $target.offset().top;
+
                     if ($(this).attr('length') !== undefined)
                         length = parseInt($(this).attr('length'));
 
                     $(this).click(function() {
 
                         $("html, body").bind("scroll mousedown DOMMouseScroll mousewheel keyup", function() {
+
                             $('html, body').stop();
                         });
 
@@ -55,10 +62,11 @@
             }
         });
 
+        SyntaxHighlighter.all();
+
     });
 
     </script>
-
 
     </head>
 
@@ -72,10 +80,15 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="http://swift.timothee-moulin.me" id="scrolled">Swift Parallax</a>
+                    <a class="navbar-brand" href="#home" id="scrolled">Swift Parallax</a>
                 </div>
                 <div class="collapse navbar-collapse">
                     <ul class="nav navbar-nav">
+                        <li class="active"><a href="#home">Home</a></li>
+                        <li><a href="#slide_3" title="Installation">Installation</a></li>
+                        <li><a href="#slide_4" title="Docs">Docs</a></li>
+                        <li><a href="#slide_5" title="Demos">Demos</a></li>
+                        <li><a href="#end" length="8000" title="End">End</a></li>
                     </ul>
                 </div>
             </div>
@@ -86,142 +99,131 @@
             <div id="slide_header">
                 <div class="center">
                     <h1>Swift Parallax</h1>
-                    <p>Create a timeline with Swift Parallax is easy.</p>
-                    <p>First, create your HTML version of the timeline and then add some fancy effects.</p>
+                    <p>Swift is the new revolutionary Parallax framework.</p>
+                    <p>Simple to use and to configure, it can move everything for you.</p>
 
-                    <p class="align-bottom"><a href="#end"><span class="big-icon glyphicon glyphicon-arrow-down" style="font-size:60px;"></span></a></p>
+                    <hr style="height: 100px;" />
+
+                    <ul class="inline">
+                        <li id="header_move_1">Backgrounds</li>
+                        <li id="header_move_2">|</li>
+                        <li id="header_move_3">Texts</li>
+                        <li id="header_move_4">|</li>
+                        <li id="header_move_5">Images</li>
+                        <li id="header_move_6">|</li>
+                        <li id="header_move_7">Cats</li>
+                        <li id="header_move_8">|</li>
+                        <li id="header_move_9">...</li>
+                    </ul>
+
+                    <div id="header_thumb" class="big-icon glyphicon glyphicon-thumbs-up"></div>
+
+                    <p class="bottom"><a href="#slide_2"><span class="big-icon glyphicon glyphicon-arrow-down" style="font-size:60px;"></span></a></p>
                 </div>
             </div>
 
             <div class="content">
 
-                <div id="slide_2">
-
-                    <div class="row">
-                        <div class="col-md-12 center timeline">
-                            <h3>Slide down to discover my timeline.</h3>
-                        </div>
+                <div id="slide_2" class="row">
+                    <div class="col-md-4">
+                        <h2 class="features_titles">Based on jQuery</h2>
+                        <span class="features_1"><img src="img/jquery.png" /></span>
+                        <ul>
+                            <li class="features_2">Lightweight Footprint</li>
+                            <li class="features_3">Cross-Browser</li>
+                            <li class="features_4">CSS3 Compliant</li>
+                        </ul>
                     </div>
 
-                    <div class="row timeline-title">
-                        <div class="col-md-12 center timeline">
-                            <h3>Jan. 2014 - Apr. 2014</h3>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-5 timeline-left">
-                            <div class="panel panel-default">
-                                <div class="panel-heading">
-                                    <h3 class="panel-title">North Island College</h3>
-                                </div>
-                                <div class="panel-body">
-                                    <p>Improving my <b>English Skills</b> with a total immersion in Canada.</p>
-                                    <ul>
-                                        <li>ESL 090: <em>Writing</em></li>
-                                        <li>ESL 089: <em>Reading</em></li>
-                                        <li>ESL 058: <em>Grammar</em></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="col-md-4">
+                        <h2 class="features_titles">Easy to Use</h2>
+                        <ol>
+                            <li class="features_1">Write your HTML</li>
+                            <li class="features_2">Add the <em>Swift</em> transitions</li>
+                            <li class="features_3">Go drink a coffee</li>
+                        </ol>
                     </div>
 
-                    <div class="row timeline-title">
-                        <div class="col-md-12 center timeline">
-                            <h3>Jul. 2012 - Dec. 2013</h3>
-                        </div>
+                    <div class="col-md-4">
+                        <h2 class="features_titles">Powerful</h2>
+                        <ul>
+                            <li class="features_1">Vertical & horizontal transitions</li>
+                            <li class="features_2">Control start, length & speed of transition</li>
+                            <li class="features_3">Initial position</li>
+                            <li class="features_4">Backgrounds & DOM elements</li>
+                        </ul>
                     </div>
-                    <div class="row">
-                        <div class="col-md-5 col-md-offset-7 timeline-right">
-                            <div class="panel panel-default">
-                                <div class="panel-heading">
-                                    <h3 class="panel-title">iomedia communication</h3>
-                                </div>
-                                <div class="panel-body">
-                                    <p>I worked for this company for 1 and half year in parallel of my school.</p>
-                                    <p>Among others things, I was in charge of the development of <em>newspapers websites</em> (<a href="http://illustre.ch">http://illustre.ch</a> - <a href="http://hebdo.ch">http://hebdo.ch</a>) and an <em>exhibition management plateform</em>.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row timeline-title">
-                        <div class="col-md-12 center timeline">
-                            <h3>Aug. 2011 - Jul. 2013</h3>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-5 timeline-left">
-                            <div class="panel panel-default">
-                                <div class="panel-heading">
-                                    <h3 class="panel-title">Web School</h3>
-                                </div>
-                                <div class="panel-body">
-                                    <p>This 2 years formation leading to a <b>Professional Education and Training Degree in Software Development</b> gave me good knowledge about the <em>best practices</em> on web development.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row timeline-title">
-                        <div class="col-md-12 center timeline">
-                            <h3>Nov. 2010 - Aug. 2011</h3>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-5 col-md-offset-7 timeline-right">
-                            <div class="panel panel-default">
-                                <div class="panel-heading">
-                                    <h3 class="panel-title">Swiss Armed Forces</h3>
-                                </div>
-                                <div class="panel-body">
-                                    <p>I was almost 1 year with the colors. I finished <b>sergeant</b>, group leader and basic training instructor.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row timeline-title">
-                        <div class="col-md-12 center timeline">
-                            <h3>Aug. 2006 - Jul. 2010</h3>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-5 timeline-left">
-                            <div class="panel panel-default">
-                                <div class="panel-heading">
-                                    <h3 class="panel-title">VAL-COM Technologie</h3>
-                                </div>
-                                <div class="panel-body">
-                                    <p>I obtained my <b>Federal Certificate of Capacity</b> after 4 years folowing a <em>General Computer Sciences</em> formation.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row timeline-title">
-                        <div class="col-md-12 center timeline">
-                            <h3>Jul. 2006</h3>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-5 col-md-offset-7 timeline-right">
-                            <div class="panel panel-default">
-                                <div class="panel-heading">
-                                    <h3 class="panel-title">End of Mandatory School</h3>
-                                </div>
-                                <div class="panel-body">
-                                    <p>I ended my mandatory school by one year in the German speaking school <em>Orientierungsschule Brig-Glis</em>.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
                 </div>
 
+                <div id="slide_3" class="row">
+                    <h1>Installation</h1>
+                    <div class="col-md-12">
+                        <p>Using Swift Parallax is pretty simple. You can download the <a href="http://plugins.jquery.com/swift/">jQuery Plugin</a> from <a href="https://github.com/timotheemoulin/jQuery-swift/">Github</a>. and put them in your own directories. Then add the following lines in your HTML.</p>
+
+                        <pre class="brush: js">
+                            <!-- Iclude jQuery (latest version) -->
+                            <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+
+                            <!-- Include Swift Parallax files -->
+                            <link rel="stylesheet" href="css/swift.css">
+                            <script src="js/swift.js"></script>
+
+                            <!-- Configure Swift Parallax to interract with your DOM elements -->
+                            <script type="text/javascript">
+                                $('#slide_footer').swift({'type': 'bg', 'positionStart': '-500', 'length': '200'});
+                            </script>
+                        </pre>
+                    </div>
+                </div>
+
+                <div id="slide_4" class="row">
+                    <h1>Docs</h1>
+                    <div class="col-md-12">
+
+                        <p>To add a transition on any DOM element, add the following classes and properties.</p>
+                        <h2>Classes</h2>
+                        <ul>
+                            <li><em>swift</em> : basic class (must be present on every element</li>
+                            <li><em>dom</em> : means that you want to move the entire element (and all it's children)</li>
+                            <li><em>bg</em> : means that you want to move it's background only</li>
+                        </ul>
+                        <h2>Properties</h2>
+                        <ul>
+                            <li><em>type</em> : can be set to <b>dom</b> <em>(move the DOM element)</em> or <b>bg</b> <em>(move its background)</em></li>
+                            <li><em>selector</em> : defines jQuery selector. Can be either a <b>class</b> or an <b>id</b></li>
+                            <li><em>axis</em> : defines the axis on which the element will move. Can be se to <b>top</b> <em>(vertical)</em> or <b>left</b> <em>(horizontal)</em></li>
+                            <li><em>initial position</em> : defines the position of the element before the transition</li>
+                            <li><em>final position</em> : defines the position of the element at the end of the transition</li>
+                            <li><em>length</em> : defines the length of the transition</li>
+                            <li><em>delay</em> : defines the delay before begining the transition</li>
+                            <li><em>links</em> : can be set to <b>after</b>, <b>both</b>, or <b>before</b> to define if there is another transition for the same element <em>after</em>, <em>before and after</em>, or <em>before</em> this one</li>
+                        </ul>
+                        <pre class="brush: js">
+                            $('#slide_footer').swift({'type': 'bg', 'positionStart': '-500', 'length': '200'});
+                        </pre>
+                        <p>This example for a <em>background transition</em> will :</p>
+                        <ol>
+                            <li>Place the background of '#slide_footer' 500px over its normal position for a vertical transition</li>
+                            <li>Begin the transition automatically</li>
+                            <li>After scrolling 200 pixels down, the background will be at its final position</li>
+                        </ol>
+
+                    </div>
+                </div>
+
+                <div id="slide_5" class="row">
+                    <h1>Demos</h1>
+                    <div class="col-md-12">
+
+                        <p>Here are some concrete examples.</p>
+                        <h2>Timeline</h2>
+                        <p><a href="timeline.html">Live</a></p>
+
+                    </div>
+                </div>
             </div>
 
-            <div id="slide_footer">
+            <div id="slide_footer" class="swift bg x y" swift-pos-y="-600" swift-delay-y="1300" swift-length-y="600" swift-pos-x="-800" swift-delay-x="1300" swift-length-x="600">
 
                 <div class="row">
 
@@ -247,13 +249,29 @@
     </body>
     <script type="text/javascript">
 
-        $('.timeline-title').swift({'type': 'dom', 'positionStart': 'bottom', 'length': '300'});
-        $('.timeline-right').swift({'type': 'dom', 'positionStart': 'right', 'length': '500', 'axis': 'left'});
-        $('.timeline-left').swift({'type': 'dom', 'positionStart': 'left', 'length': '500', 'axis': 'left'});
+        // type, selector, axis, positionStart, positionEnd, length, delay, links
+        $('#header_move_1').swift({'type': 'dom', 'positionStart': 'top', 'length': '200'});
+        $('#header_move_2').swift({'type': 'dom', 'positionStart': 'top', 'length': '200', 'delay': '10'});
+        $('#header_move_3').swift({'type': 'dom', 'positionStart': 'top', 'length': '200', 'delay': '20'});
+        $('#header_move_4').swift({'type': 'dom', 'positionStart': 'top', 'length': '200', 'delay': '30'});
+        $('#header_move_5').swift({'type': 'dom', 'positionStart': 'top', 'length': '200', 'delay': '40'});
+        $('#header_move_6').swift({'type': 'dom', 'positionStart': 'top', 'length': '200', 'delay': '50'});
+        $('#header_move_7').swift({'type': 'dom', 'positionStart': 'top', 'length': '200', 'delay': '60'});
+        $('#header_move_8').swift({'type': 'dom', 'positionStart': 'top', 'length': '200', 'delay': '70'});
+        $('#header_move_9').swift({'type': 'dom', 'positionStart': 'top', 'length': '200', 'delay': '80'});
 
-        $('#slide_header').swift({'type': 'bg', 'positionStart': '-200', 'length': '200', 'links': 'after'});
-        $('#slide_header').swift({'type': 'bg', 'positionStart': '0', 'positionEnd': '-200', 'length': '200', 'links': 'both', 'delay': '200'});
-        $('#slide_header').swift({'type': 'bg', 'positionStart': '-200', 'length': '200', 'links': 'before', 'delay': '400'});
+        $('#header_thumb').swift({'type': 'dom', 'axis': 'left', 'positionStart': 'right', 'length': '200'});
+
+        $('.features_titles').swift({'type': 'dom', 'axis': 'left', 'positionStart': 'left', 'positionEnd': '50', 'length': '100', 'delay': '50', 'links': 'after'});
+        $('.features_titles').swift({'type': 'dom', 'axis': 'left', 'positionStart': '50', 'positionEnd': '-25', 'length': '50', 'delay': '150', 'links': 'both'});
+        $('.features_titles').swift({'type': 'dom', 'axis': 'left', 'positionStart': '-25', 'length': '50', 'delay': '200', 'links': 'before'});
+
+        $('.features_1').swift({'type': 'dom', 'axis': 'left', 'positionStart': 'right', 'length': '200', 'delay': '50'});
+        $('.features_2').swift({'type': 'dom', 'axis': 'left', 'positionStart': 'right', 'length': '200', 'delay': '75'});
+        $('.features_3').swift({'type': 'dom', 'axis': 'left', 'positionStart': 'right', 'length': '200', 'delay': '100'});
+        $('.features_4').swift({'type': 'dom', 'axis': 'left', 'positionStart': 'right', 'length': '200', 'delay': '125'});
+
+        $('#slide_header').swift({'type': 'bg', 'positionStart': '-200', 'length': '200'});
 
         $('#slide_footer').swift({'type': 'bg', 'positionStart': '-500', 'length': '200'});
     </script>
